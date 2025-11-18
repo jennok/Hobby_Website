@@ -1,0 +1,113 @@
+<!DOCTYPE html> 
+<html lang="fi">
+<head>
+    <title>Neulomaassa</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="tyylitiedosto.css">
+    <link rel="stylesheet" href="laskurit.css">
+</head> 
+
+<body>
+    <div class="wrapper">
+    <header>
+        <div id="logo">
+            <img src="kuvat/logo.png" alt="Neulomaassa">
+        </div>
+        <nav id="topmenu">
+            <ul>
+                <li><a href="etusivu.html">Etusivu</a></li>
+                <li><a href="ohjeet.html">Ohjeet</a></li>
+                <li><a href="laskurit.html">Laskurit</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="laskuri">
+        <h1>Perinteinen vahvennettu kantapää</h1>
+        <p id = "laskuri1">Syötä laskuriin sukkasi varren silmukoiden määrä ja laskurin avulla voit luoda kantapään ohjeen villasukkiin vauvasta vaariin.</p><br>
+        <img id="ohjeKuva" src="kuvat/kantapaa.jpg" alt="kuva kantapäästä">
+        <h2>Aloita syöttämällä silmukkamäärä laskuriin!</h2>
+        <label>Varren silmukkamäärä</label>
+        <input type="text" id="silmukat" size="10">
+        <button type="button" name="silmukat" onclick="kantapaaLaskuri()">Laske</button><br><br>    
+        <div id="ohje1">
+            <h3>Kantalappu</h3>
+                <p id="aloitus"></p>
+            <h3>Vahvennettu neule</h3>
+                <p>Aloita vahvennettu neule.</p><br>
+                <p><b>Nurja puoli: </b>Nosta ensimmäinen silmukka neulomatta ja neulo kerros nurin loppuun.</p>
+                <p><b>Oikea puoli: </b>*Nosta 1 silmukka neulomatta, neulo 1 silmukka oikein.* Toista *-* kerroksen loppuun.</p>
+                <p id="kannanKorkeus"></p>
+            <h3>Kantapään käännös</h3>
+                <p>Jatka samaa vahvennettua neuletta myös käännöksessä.</p>
+                <p id="sivu1" ></p>
+                <p id="sivu2"> </p>
+                <p id="keskiSilmukat"></p>
+                <p>Jaa jäljelle jäävät silmukat kahdelle puikolle.</p>
+            <h3>Silmukoiden poimiminen</h3>
+                <p id="pomittavatSilmukat"></p>
+            <h3>Kiilakavennukset</h3>
+                <p>Neulo 1. puikon lopussa 2 oikein yhteen ja 4. puikon alussa ssk-kavennus.</p>
+                <p id="kiilaKavennukset"></p><br>
+        </div>
+        <div id="vinkit">
+            <h3>Vinkit!</h3>
+            <p>Voit jatkaa kiilakavennuksia, kunnes sukka on sopivan kokoinen.</p><br>
+        </div>
+
+    </section>
+
+
+    <script>
+        function kantapaaLaskuri() {
+            if (document.getElementById("silmukat").value < 14) {
+                alert("Syötä isompi silmukkamäärä!");
+                return;
+            }
+            if (document.getElementById("silmukat").value > 120) {
+                alert("Syötä pienempi silmukkamäärä!");
+                return;
+            }
+
+            var silmukat = Number(document.getElementById("silmukat").value);
+
+            let kantaSilmukat = Math.floor(silmukat / 2);
+            if (kantaSilmukat % 2 != 0){ //Kantalappuun parillinen määrä silmukoita
+                    kantaSilmukat++;
+            }
+            document.getElementById("aloitus").innerHTML = "Kantapää tehdään " + kantaSilmukat + " silmukalla. Neulo kantapään silmukat samalle puikolle (puikot 1 ja 4). Jätä loput silmukat odottamaan ja käännä työ.";
+            
+            //kannan koreus sama kuin silmukkamäärä
+            document.getElementById("kannanKorkeus").innerHTML = "Toista kerroksia yhteensä " + kantaSilmukat + " kertaa . Neulo vielä nurjan puolen kerros.";
+            
+            //kantapään käännös
+            let keskiSilmukat = Math.ceil(kantaSilmukat / 3);
+            if (keskiSilmukat % 2 != 0){ //Pariton määrä
+                    keskiSilmukat++;
+            }
+            let sivuSilmukat = (kantaSilmukat - keskiSilmukat)/2;
+            let sivu = sivuSilmukat + 1;
+            document.getElementById("sivu1").innerHTML = "Neulo kunnes jäljellä " + sivu + " silmukkaa, tee ssk-kavennus ja käännä työ.";
+            document.getElementById("sivu2").innerHTML = "Neulo kunnes jäljellä " + sivu + " silmukkaa, tee 2 oikein yhteen ja käännä työ.";
+            document.getElementById("keskiSilmukat").innerHTML = "Jatka käännöksiä samalla tavalla. Keskimmäiset " + keskiSilmukat + " silmukkaa pysyvät samana ja sivusilmukat vähenevät.";
+
+            //poimimiminen
+            let poimittavatSilmukat = kantaSilmukat/2;
+            document.getElementById("pomittavatSilmukat").innerHTML = "Jatka neulomista pyöröna. Seuraavalla kerroksella poimi neuloen kantalapun reunoista " + poimittavatSilmukat + " silmukkaa + 1 silmukka puikkojen vaihtumiskohdasta.";
+
+            //kiilakavennukset
+            let kiilaKavennukset = (((silmukat - kantaSilmukat) + keskiSilmukat + (poimittavatSilmukat * 2) + 2) - silmukat) / 2;
+            document.getElementById("kiilaKavennukset").innerHTML = "Toista kavennuksia joka toinen kerros yhteensä " + kiilaKavennukset + " kertaa.";
+
+            //Näytä ohje
+            document.getElementById("ohje1").style.display = "block";
+        }
+    </script>
+
+    <footer>
+        &copy; 2025 Neulomaassa
+    </footer>
+    </div>
+</body>
+
+</html>

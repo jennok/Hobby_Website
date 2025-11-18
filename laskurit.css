@@ -1,0 +1,41 @@
+#ohjeKuva {
+    height: 350px;
+    border-radius: 50%;
+    float: none;
+    margin: 20px auto 20px auto;
+}
+
+#laskuri1 {
+    font-size: 16px;
+    color: #81389e;
+    font-style: italic;
+    line-height: 200%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.laskuri {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    color: rgb(38, 0, 46);
+    width: 80%;
+    max-width: 800px;
+    min-height: 400px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    padding: 30px 50px 30px 50px;
+}
+
+#ohje1 {
+    display: none;
+}
+
+#vinkit {
+    background-color: rgb(214, 235, 235);
+    border-radius: 30px;
+    padding: 10px 20px 10px 20px;
+    margin: 20px auto 20px auto;
+    max-width: 500px;
+}

@@ -1,0 +1,62 @@
+.esittely {
+    text-align: center;
+    background-color: rgb(252, 242, 255);
+    color: rgb(38, 0, 46);
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.ohjeet {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    color: rgb(38, 0, 46);
+    width: 90%;
+    min-height: 300px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+p.intro {
+    font-style: italic;
+    line-height: 200%;
+    margin: auto;
+    max-width: 600px;
+    color: #81389e;
+}
+
+.tiedot {
+    max-width: 250px;
+    margin: auto;
+    background-color: #fbf3ff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+h4 {
+    text-align: left;
+    padding: 0 0 0 20px;
+}
+
+#puikot, #lanka {
+    padding: 0;
+    text-align: left;
+    color: #81389e;
+    padding: 0 0 0 40px;
+}
+
+table {
+    margin: auto;
+    text-align: left;
+    width: 90%;
+}
+
+td {
+    padding: 10px 10px 10px 60px;
+}

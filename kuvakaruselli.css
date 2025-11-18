@@ -1,0 +1,58 @@
+
+
+.Kuvakaruselli {
+    max-width: 500px;
+    position: relative;
+    margin: auto;
+}
+
+.kuva {
+    border-radius: 10%;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    margin-top: -20px;
+    color: rgb(67, 28, 90);
+    font-size: 30px;
+    border-radius: 5px;
+    user-select: none;
+
+}
+
+.next {
+    right: 0;
+    margin-right: 10px;
+}
+
+.prev {
+    left: 0;
+    margin-left: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: #e2dbff9c;
+}
+
+.neulekaavio {
+    max-width: 700px;
+    position: relative;
+    margin: auto;
+}
+
+.up, .down {
+    cursor: pointer;
+    padding: 3px 10px 3px 10px;
+    color: rgb(67, 28, 90);
+    font-size: 30px;
+    border-radius: 5px;
+    user-select: none;
+}
+
+.up:hover, .down:hover {
+    background-color: #e2dbff9c;
+}
